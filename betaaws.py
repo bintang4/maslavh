@@ -16,7 +16,7 @@ aws_patterns = [
  r'"AKIA[A-Z0-9]{16}"',
 ]
 aws_access_key_pattern = re.compile('|'.join(aws_patterns))
-REQUEST_TIMEOUT = 10
+REQUEST_TIMEOUT = 5
 
 def get_js_files(url):
     try:
@@ -52,7 +52,7 @@ def scan_website(url, result_file_lock):
   if url.endswith('/'):
         url = url[:-1]
   try:
-    r = requests.get(url, timeout=10)
+    r = requests.get(url, timeout=5)
     js_files = get_js_files(r.url)
     found = False
     for js_file in js_files:
